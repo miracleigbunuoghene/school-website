@@ -1,0 +1,220 @@
+/*    fontfamily1: "monsterrat", sans-serif;
+    --fontfamily2: "poppins", sans-serif;
+    --fontfamily3: "roboto", sans-serif; */
+
+:root {
+  --color1: #034a7f;
+  --color2: #8bc34a;
+  --color3: #ffc107;
+  --color4: #f7f7f7;
+  --color5: #000;
+  --fontSize1: 24px;
+  --fontSize2: 16px;
+  --fontSize3: 40px;
+  --fontSize4: 36px;
+  --fontSize5: 30px;
+  --fontSize6: 20px;
+  --fontSize7: 18px;
+  --fontSize8: 16px;
+  --fontFamily1: "monsterrat", sans-serif;
+  --fontFamily2: "poppins", sans-serif;
+  --fontFamily3: "roboto", sans-serif;
+  --sectionPadding: 70px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--fontFamily2);
+}
+
+/* html scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  width: 150px;
+  padding: 12px;
+  border-radius: 75px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color3);
+  transition: all 2s ease;
+}
+
+.btn a {
+  text-decoration: none;
+  color: var(--color1);
+  font-family: var(--fontFamily2);
+  font-size: var(--fontSize7);
+}
+
+.btn:hover {
+  background-color: var(--color1);
+}
+
+.btn:hover a {
+  color: var(--color3);
+}
+
+/* container */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  /* border: 2px solid red; */
+  margin: 0 auto;
+}
+
+/* responsive image */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 15px;
+}
+
+.sectionHeading {
+  text-transform: uppercase;
+  font-size: var(--fontSize3);
+  font-family: var(--fontFamily2);
+}
+
+/* section text */
+.sectionText {
+  line-height: 1.8;
+}
+
+/* flex class */
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Header and Navbar starts */
+header {
+  background-color: var(--color1);
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo img {
+  width: 30px;
+  height: 30px;
+}
+
+nav .links {
+  display: flex;
+  gap: 30px;
+}
+
+nav .links a {
+  text-decoration: none;
+  color: var(--color4);
+  font-size: var(--fontSize2);
+  font-weight: 700;
+  font-family: var(--fontFamily2);
+  transition: all 1s ease-in-out;
+}
+
+nav .links a:hover {
+  color: var(--color3);
+}
+
+nav .hambuger {
+  color: var(--color2);
+  cursor: pointer;
+  font-size: var(--fontSize5);
+  display: none;
+}
+/* Header and Navbar end */
+
+/* Footer Section Starts */
+#footer-section {
+  padding-top: var(--sectionPadding);
+  padding-bottom: var(--sectionPadding);
+  background-color: var(--color1);
+  color: var(--color4);
+}
+
+.footer-content--left-links > div > a {
+  text-decoration: none;
+  color: var(--color4);
+}
+
+.footer-content--left-links > div > a:hover {
+  color: var(--color3);
+}
+
+.footer-content--right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-content--right div:nth-child(1) {
+  color: var(--color4);
+  font-family: var(--fontFamily1);
+  font-size: var(--fontSize6);
+}
+
+.footer-content--right .social-links {
+  display: flex;
+  gap: 15px;
+  font-size: var(--fontSize6);
+  cursor: pointer;
+}
+
+.footer-content--right .social-links > i:hover {
+  color: var(--color3);
+}
+/* Footer section ends */
+
+/* responsive header and navbar section */
+/* from 0 to 768px */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  nav .hambuger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+
+  nav .links {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav .links.active {
+    display: flex;
+  }
+}
